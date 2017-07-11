@@ -40,6 +40,15 @@
     <% if current_user && current_user == @place.user %>
       <%= link_to 'Edit', edit_place_path(@place), class: 'btn btn-primary' %>
       <%= link_to 'Destroy', place_path(@place), method: :delete, data: {confirm: 'Are you sure you want to delete?'}, class: 'btn btn-primary' %>
+
+      <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalShort">
+          Add a Photo
+      </button>
+      </div>
+
+      <br />
+
     <% end %>
     </div>
     <br />
@@ -47,9 +56,6 @@
 </div>
 
 <div class="clear"></div>
-
-
-
 
 
 <!-- Modal -->
@@ -108,11 +114,7 @@
 <br />
 
 
- <!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalShort">
-    Add a Photo
-</button>
-</div>
+ 
 
 
 <!-- Modal -->
