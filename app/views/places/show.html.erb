@@ -102,3 +102,55 @@
     </div>
     <% end %>
   </div>
+
+<div class="clear"></div>
+
+<br />
+
+
+ <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalShort">
+    Add a Photo
+</button>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalShort" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Add a Photo</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+     
+       <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
+          <div class="modal-body">
+              <%= f.input :caption %>
+         </div>
+         <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+         <%= f.submit "Add", class: 'btn btn-primary' %>
+      </div>
+      <% end %>    
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<h1>Photos</h1>
+
+<% @place.photos.each do |photo| %>
+   <div class="booyah-box col-10 offset-1">
+    <blockquote>
+              <%= photo.caption %>
+    </blockquote>
+  </div>
+<% end %>
+
+
